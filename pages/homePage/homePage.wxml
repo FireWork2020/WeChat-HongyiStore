@@ -1,0 +1,83 @@
+<view class="background">
+<view class="search">
+    <input type="text" placeholder="输入搜索关键词" value="{{name}}" bindinput="bindInput" bindconfirm="bindConfirm"></input>
+    <image src="/images/icon/search.svg"></image>
+  </view>
+<view class="swiper-container">
+  <swiper indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+    <swiper-item wx:for="{{imgUrls}}" wx:key="item">
+      <image  mode="aspectFill" bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item}}" />
+    </swiper-item>
+  </swiper>
+  
+</view>
+<view class="divider-line"></view>
+
+<view class="category">
+  <view class="category-item">
+    <view>
+      <image mode="aspectFill" src="../../images/category/1.png"></image>
+    </view>
+    <view>套装</view>
+  </view>
+  <view class="category-item">
+    <view>
+      <image mode="aspectFill" src="../../images/category/2.png"></image>
+    </view>
+    <view>上衣</view>
+  </view>
+  <view class="category-item">
+    <view>
+      <image mode="aspectFill" src="../../images/category/3.png"></image>
+    </view>
+    <view>女士</view>
+  </view>
+  <view class="category-item">
+    <view>
+      <image mode="aspectFill" src="../../images/category/4.png"></image>
+    </view>
+    <view>男士</view>
+  </view>
+  <view class="category-item">
+    <view>
+      <image mode="aspectFill" src="../../images/category/5.png"></image>
+    </view>
+    <view>内衣</view>
+  </view>
+</view>
+
+<view class="recommend">
+<view class="recommend-title">人气推荐</view>
+<view class="recommend-container"> <!-- goods-container-->
+  <view class="good-box" wx:for="{{recommendGoodList}}" wx:key="{{item.goodID}}" data-id="{{item.goodID}}">
+    <view class="img-box">
+      <image src="{{item.images[0].imageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+    </view>
+    <view class="good-title">{{item.goodName}}</view>
+    <view class="good-description">{{item.description}}</view>
+    <view style="display:flex;">
+      <view class="good-price">¥ {{item.price}}</view>
+    </view>
+  </view>
+</view>
+</view>
+<view class="allGoods">
+  <view class="allGoods-title">猜你喜欢</view>
+  <view class="allGoods-container"><!--all goods container-->
+    <view class="good-box" wx:for="{{recommendGoodList}}" wx:key="{{item.goodID}}" data-id="{{item.goodID}}">
+    <view class="img-box">
+      <image src="{{item.images[0].imageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+    </view>
+    <view class="good-title">{{item.name}}</view>
+    <view class="good-description">{{item.description}}</view>
+    <view style="display:flex;">
+      <view class="good-price">¥ {{item.price}}</view>
+    </view>
+  </view>
+  </view> 
+
+</view>
+
+
+
+</view>

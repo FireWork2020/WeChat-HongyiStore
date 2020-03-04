@@ -1,0 +1,15 @@
+<!--miniprogram/pages/test/test.wxml-->
+<text>miniprogram/pages/test/test.wxml</text>
+
+
+<view class="recommend-container">
+  <view class="goods-box" wx:for="{{testList}}" wx:key="{{good_id}}" data-id="{{item.good_id}}">
+    <view class="img-box">
+      <image src="{{item.images[0].imageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+    </view>
+    <view class="good-title">{{item.name}}</view>
+    <view style="display:flex;">
+      <view class="good-price">¥ {{item.price}}</view>
+    </view>
+  </view>
+</view>
