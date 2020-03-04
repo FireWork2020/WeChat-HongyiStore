@@ -14,10 +14,14 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url:'/menu/allmenus',
+      //url:'http://localhost:8080/menu/allmenus',
+      url:'http://localhost:8080/goods/goodsByParentMenu',
+      data:{
+        menuId:1
+      },
       success(res){
-        console.log(res);
-        this.menus = res;
+        //console.log(res);
+        //this.menus = res;
       }
     })
   },

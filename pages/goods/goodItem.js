@@ -5,14 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    currentParentMenu:0,
+    currentChildMenu:0,
+    goods:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'http://localhost:8080/goos/goodsByParentMenu/',
+      data:{
+        menuId:currentChildMenu
+      },
+      success(res){
+        console.log(res);
+      }
+    })
   },
 
   /**
