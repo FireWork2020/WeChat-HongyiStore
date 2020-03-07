@@ -1,44 +1,21 @@
 <view class="container">
 
-
-  <view class="search">
-    <input type="text" placeholder="输入搜索关键词" value="{{name}}" bindinput="bindInput" bindconfirm="bindConfirm"></input>
-    <image src="../../images/icon/search.svg"></image>
+  <view class="nav_left">
+    <block wx:for="{{menus}}">
+      <view class="nav_left_item {{curNav == index ? 'active' : ''}}" bindtap="showSelectedChildMenu" data-index="{{index}}">{{item.name}}</view>
+    </block>
   </view>
 
-  <view class="content-container">
-
-    <scroll-view class="category-container" scroll-y="true" scroll-with-animation="true">
-      <view wx:if="{{category.level == 1}}" class="category {{categorySelected.id == category.id? 'active':''}}" wx:for="{{categories}}" wx:for-item="category" wx:key="id" data-id="{{category.id}}" bindtap="onCategoryClick">
-        <view class="name {{categorySelected.id == category.id? 'active':''}}">{{category.name}}</view>
+  <!-- 子菜单栏 -->
+  <view class="nav_right">
+    <block wx:for="{{menus[curNav].children}}">
+      <view class="nav_right_item">
+        <navigator url="../../detail/detail">
+          <image src=""></image>
+          <text>{{item.name}}</text>
+        </navigator>
       </view>
-    </scroll-view>
-
-    <scroll-view class="goods-container" scroll-y="true" scroll-top="{{scrolltop}}" wx:if='{{onLoadStatus}}'>
-      <view class="no-data" wx:if="{{a==b}}">
-       <view class="line">--</view>
-       <view class="txt">暂无商品</view>
-       <view class="line">--</view>
-       </view>
-      <view class="goods" wx:for="{{currentGoods}}" wx:key="id" wx:for-item="item" data-id='{{item.id}}' bindtap="toDetailsTap">
-        <image mode="aspectFill" class="pic" src="{{item.pic}}"></image>
-      
-        <view class="name ellipsis">{{item.name}}</view>
-      
-        <view class="good-info">
-        <view class="good-info-price-box">
-          <text class="price">¥{{item.price}}</text>
-        </view>
-        <view class="good-info-sold-box">
-          <text class="number">已售{{item.soldNum}}件</text>
-          <text>评价{{item.evaluationScore}}</text>
-        </view>
-      </view>
-    </view>
-
-    </scroll-view>
+    </block>
   </view>
-
-  
 </view>
  

@@ -1,140 +1,69 @@
 page{
-  widht:100vw;
-  height:100vh;
+  background: #f5f5f5;
 }
-page,view,image,input{
-  display: block;
-  box-sizing:border-box;
+/*总体主盒子*/  
+.container {  
+  position: relative;  
+  width: 100%;  
+  height: 100vh;  
+  background-color: #fff;  
+  color: #939393;  
 }
-.container{
-  width:100vw;
-  height:100vh;
-}
-.search{
-  margin-top:32rpx;
-  position: relative;
-  width:700rpx;
-  height:66rpx; 
-}
-.search input{
-  border: 1rpx solid #e3e3e3;
-  width:700rpx;
-  height:66rpx;
-  border-radius: 30rpx;
-  padding-left: 32rpx;
-}
-.search image{
-  width:35rpx;
-  height:35rpx;
-  position: absolute;
-  top:16rpx;
-  right:32rpx;
-}
-.content-container{
-  width:100vw;
-  height:100%;
-  margin-top:32rpx;
-  display: flex;
-}
-.category-container {
-  width:180rpx;
-  height:100%;
-}
-.category-container .category{
-  padding:30rpx 0rpx;
+ /*左侧栏主盒子*/  
+.nav_left{  
+  /*设置行内块级元素（没使用定位）*/ 
+  position: fixed;
+  left: 0; 
+  display: inline-block;  
+  width: 25%;  
+  height: 100%;  
+  /*主盒子设置背景色为灰色*/
+  margin-left: 0;   
+  background-color: #f5f5f5;
+} 
+/*左侧栏list的item*/  
+.nav_left .nav_left_item
+{  
+  /*每个高30px*/  
+  height: 40px;  
+  /*垂直居中*/  
+  line-height: 40px;  
+  /*再设上下padding增加高度，总高42px*/  
+  padding: 6px 0;  
+  /*只设下边线*/  
+  border-bottom: 1px solid #dedede;  
+  /*文字14px*/  
+  font-size: 14px; 
   text-align: center;
+} 
+/*左侧栏list的item被选中时*/  
+.nav_left .nav_left_item .active{  
+  /*背景色变成白色*/  
+  background: #fff;  
+  color: #f0145a; 
+}  
+.active{
+  background: #fff;  
+  color: #f0145a; 
 }
-.category-container .category.active{
-  background: #fff;
-  border-left: 4rpx solid #d81e06;
-}
-.goods-container{
-  flex:1;
-  background: #fff;
-  min-height:100%;
-}
-.container .goods-container .no-data{
-  display: flex;
-  width:100%;
-  flex-direction:row;
-  justify-content: center;
-}
-.container .goods-container .no-data .line{
-  width:60rpx;
-}
-.goods-container .no-data .txt{
-  color:#6a6;
-}
-.goods-container .goods{
-  position: relative;
-  padding: 20rpx 30rpx;
-  font-size: 36rpx;
-  line-height: 40rpx;
-  border-bottom: 1px solid #f7f7f7;
-}
-.goods-container .goods .pic{
-  float: left;
-  width:140rpx;
-  height:140rpx;
-  margin-right: 20rpx;
-  border-radius: 6rpx;
-  display: flex;
-  flex-direction: column;
-}
-.goods-container .goods .name{
-  color: #000;
-  font-size: 28rpx;
-  line-height: 46rpx;
-  font-weight: bold;
-}
-.goods-container .goods .good-info{
-  display: flex;
-  flex-direction: row;
-  width:350rpx;
-  align-items: flex-start;
-  margin-top: 5rpx;
-}
-.goods-container .goods .good-info .good-info-price-box{
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-end;
-  overflow: hidden;
-  font-size: 22rpx;
-  line-height: 22rpx;
-}
-.goods-container .goods .soldInfo .good-info-price-box .price {
-  color: #d81e06;
-  margin-top: 10rpx;
-  width: 120rpx;
-  font-size: 28rpx;
-  font-weight: bold;
-  line-height: 40rpx;
-}
-.goods-container .goods .good-info .good-info-sold-box {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  overflow: hidden;
-  font-size: 22rpx;
-  line-height: 22rpx;
-}
-.goods-container .goods .good-info .good-info-sold-box .number {
-  color: #d81e06;
-  padding: 2px;
-  border: 1px solid #d81e06;
-  border-radius: 5rpx;
-}
-.ellipsis {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-}
+/*右侧栏主盒子*/  
+.nav_right{  
+  /*右侧盒子使用了绝对定位*/  
+  position: absolute;  
+  top: 0;  
+  right: 0;  
+  flex: 1;  
+  /*宽度75%，高度占满，并使用百分比布局*/  
+  width: 75%;  
+  height: 1000px;   
+  background: #fff;  
+} 
+/*右侧栏list的item*/  
+.nav_right .nav_right_item{  
+  /*浮动向左*/  
+  float: left;  
+  /*每个item设置宽度是33.33%*/  
+  width: 33.33%;  
+  height: 120px;  
+  text-align: center;  
+}  
