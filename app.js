@@ -1,5 +1,6 @@
 //app.js
 App({
+  isLogined:true,
   onLaunch: function () {
     
     if (!wx.cloud) {

@@ -1,1 +1,156 @@
-/* miniprogram/pages/cart/cart.wxss */
+page{
+  background-color: #f5f5f5
+}
+.container{
+  width:100%;
+  height: 100vh;
+}
+.login_container{
+  width:100%;
+  min-height: 100vh;
+}
+.scroll{
+  margin-bottom: 120rpx;
+}
+.cart_item{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  margin-top:20rpx;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+}
+.item_selected_yes{
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  border: 1px solid rgb(102, 193, 140);
+  border-radius: 50%;
+  margin-top: 58rpx;
+  margin-left: 20rpx;
+}
+.item_selected_no{
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-top: 58rpx;
+  margin-left: 20rpx;
+}
+.item-image {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+}
+.title{
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(74, 74, 74, 1);
+  margin-top: 20rpx;
+}
+.desc{
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.row .price{
+  font-size: 22rpx;
+  font-family: ArialMT;
+  color: rgba(230, 67, 64, 1);
+  margin-top: 38rpx;
+}
+.edit{
+  position: relative;
+  right: -200rpx;
+  bottom: -10rpx;
+}
+.edit text{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 34rpx;
+  width: 40rpx;
+  margin-left: 20rpx;
+  text-align: center;
+}
+.edit .sub{
+  color: #000;
+  border: 1px solid #888;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.edit .number{
+  font-size: 26rpx;
+  font-family: ArialMT;
+  color: rgba(3, 3, 3, 1);
+}
+.edit .add{
+  color: rgb(102, 193, 140);
+  border: 1px solid rgb(102, 193, 140);
+  border-radius: 50%;
+  font-weight: bold;
+}
+.settle_account{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  background: white;
+}
+.bottom_line {
+  width: 100%;
+  height: 4rpx;
+  background: lightgray;
+}
+.item_allselected_yes{
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  border: 1px solid rgb(102, 193, 140);
+  color: #fff;
+  border-radius: 50%;
+}
+.item_allselected_no{
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+.item_allselected_yes text{
+  position: absolute;
+  left: 6rpx;
+  top: 6rpx;
+  height: 29rpx;
+  width: 29rpx;
+  border-radius: 50%;
+  background-color: rgb(102, 193, 140);
+}
+.total_price{
+  color: red;
+  position: relative;
+}
+.all_select{
+  font-size: 28rpx;
+  margin-right: 40rpx;
+  margin-left: 10rpx;
+}
+.button_settle{
+  background-color: #f44336;
+}

@@ -1,2 +1,42 @@
-<!--miniprogram/pages/cart/cart.wxml-->
-<text>miniprogram/pages/cart/cart.wxml</text>
+<view class="container">
+  <view class="login_container" wx:if="{{isLogined == true}}">
+    <scroll-view class="scroll" scroll-y="true">
+      <view class="seperate"></view>
+      <view wx:for="{{cartList}}" wx:key="">
+        <view class="cart_item">
+          <view class="{{item.isSelected ? 'item_selected_yes' : 'item_selected_no'}}" bindtap="switchSelect" data-index="{{index}}"data-id="{{index}}"></view>
+          <text></text>
+          <image class="item-image"></image>
+          <view class="column">
+            <text class="title">{{item.name}}</text>
+            <text class="desc"></text>
+            <view class="row">
+              <text class="price">￥</text>
+              <text class="price">{{item.price}}</text>
+              <view class="edit">
+                <text class="sub" bindtap="quantityChange" id="sub" data-index="{{index}}">-</text>
+                <text class="number">{{item.cnt}}</text>
+                <text class="add" bindtap="quantityChange" id="add" data-index="{{index}}">+</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="seperate"></view>
+    </scroll-view>
+    <view class="settle_account">
+      <view class="bottom_line"></view>
+      <view class="row">
+        <view bindtap="selectAll" class="{{isAllSelected ? 'item_allselected_yes' : 'item_allselected_no'}}">
+          <text></text>
+        </view>
+        <text class="all_select">全选</text>
+        <text>合计：￥</text>
+        <text class="total_price">{{totalMoney}}</text>
+        <button class="button_settle" bindtap="" form-type="submit">结算</button>
+      </view>
+    </view>
+  </view>
+  <view class="no_login_container" wx:else>
+  </view>
+</view>

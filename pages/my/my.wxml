@@ -1,2 +1,7 @@
-<!--miniprogram/pages/my/my.wxml-->
-<text>miniprogram/pages/my/my.wxml</text>
+<view class="content_container">
+  <view class="login_container" wx:if="{{app.isLogined == true}}">
+
+  </view>
+  <view class="no_login_container" wx:else></view>
+
+</view>
