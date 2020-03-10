@@ -1,83 +1,77 @@
-<view class="background">
-<view class="search">
-    <input type="text" placeholder="输入搜索关键词" value="{{name}}" bindinput="bindInput" bindconfirm="bindConfirm"></input>
-    <image src="/images/icon/search.svg"></image>
-  </view>
-<view class="swiper-container">
-  <swiper indicator-dots="true" indicator-active-color="#fff" autoplay circular>
-    <swiper-item wx:for="{{imgUrls}}" wx:key="item">
-      <image  mode="aspectFill" bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item}}" />
-    </swiper-item>
-  </swiper>
-  
+<view class="navbar">  
+  <text wx:for="{{navbars}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
 </view>
-<view class="divider-line"></view>
+<!-- banner -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banners}}">
+      <swiper-item>
+        <image src="{{item.imgUrl}}" mode="widthFix" data-goodsid="{{item.id}}" catchtap="show"/>
+      </swiper-item>
+    </block>  
+</swiper>
 
-<view class="category">
-  <view class="category-item">
-    <view>
-      <image mode="aspectFill" src="../../images/category/1.png"></image>
-    </view>
-    <view>套装</view>
+  <!-- 分类导航 -->
+ <view>
+  <view class="navs">
+    <block wx:for-items="{{menus}}" wx:key="name">
+      <view class="nav-item"  data-type="{{item.menuName}}" data-typeid="{{item.id}}">
+        <image src="{{item.imgUrl}}" class="nav-image" />
+        <text>{{item.menuName}}</text>
+      </view>
+    </block>
   </view>
-  <view class="category-item">
-    <view>
-      <image mode="aspectFill" src="../../images/category/2.png"></image>
-    </view>
-    <view>上衣</view>
-  </view>
-  <view class="category-item">
-    <view>
-      <image mode="aspectFill" src="../../images/category/3.png"></image>
-    </view>
-    <view>女士</view>
-  </view>
-  <view class="category-item">
-    <view>
-      <image mode="aspectFill" src="../../images/category/4.png"></image>
-    </view>
-    <view>男士</view>
-  </view>
-  <view class="category-item">
-    <view>
-      <image mode="aspectFill" src="../../images/category/5.png"></image>
-    </view>
-    <view>内衣</view>
-  </view>
-</view>
+ </view> 
+<!-- 新品特卖 -->
+<view class="separate"></view>
+<view class="cate-container"> 
+    <view class="category-title">
+      <text class="name">新品特卖</text>
+      <view class="line_flag"></view>
+      <block wx:for-items="{{brands}}" wx:key="id">
+        <navigator url="/pages/brand/brand?activityId={{item.id}}">
+        <image class="head-img" src="{{item.imgUrl}}" mode="widthFix"></image>
+        </navigator>
+        <text class="brand-name">{{item.name}}</text> 
+        <view class='pms'>
+        <image class="activity-logo" src="../../images/activity_logo.png" mode="widthFix"></image>
+        {{item.remark}}
+        </view>
+      </block> 
+    </view>     
+</view>  
 
-<view class="recommend">
-<view class="recommend-title">人气推荐</view>
-<view class="recommend-container"> <!-- goods-container-->
-  <view class="good-box" wx:for="{{recommendGoodList}}" wx:key="{{item.goodID}}" data-id="{{item.goodID}}">
-    <view class="img-box">
-      <image src="{{item.images[0].imageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+<!--福利专场 start-->
+  <view class="welfare-container"> 
+  <view class="category-title">
+    <text class="title">福利专场</text>
+    <view class="line_name">
+      <text>每天早10晚8准时上新</text>
     </view>
-    <view class="good-title">{{item.goodName}}</view>
-    <view class="good-description">{{item.description}}</view>
-    <view style="display:flex;">
-      <view class="good-price">¥ {{item.price}}</view>
-    </view>
-  </view>
-</view>
-</view>
-<view class="allGoods">
-  <view class="allGoods-title">猜你喜欢</view>
-  <view class="allGoods-container"><!--all goods container-->
-    <view class="good-box" wx:for="{{recommendGoodList}}" wx:key="{{item.goodID}}" data-id="{{item.goodID}}">
-    <view class="img-box">
-      <image src="{{item.images[0].imageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
-    </view>
-    <view class="good-title">{{item.name}}</view>
-    <view class="good-description">{{item.description}}</view>
-    <view style="display:flex;">
-      <view class="good-price">¥ {{item.price}}</view>
-    </view>
-  </view>
-  </view> 
+  </view>  
+  <scroll-view scroll-y="true">
+      <view class="welfares">
+         <block wx:for-items="{{newGoods}}" wx:key="id">
+          <view class="welfares-good" catchtap="catchTapCategory" data-name="{{item.name}}" data-goodsid="{{item.id}}">
+            <view>
+              <image src="{{item.imgUrl}}" class="welfares-image" mode="widthFix"/> 
+            </view>
+            <view class="product-name">
+              {{item.name}}
+            </view>
+            <view class="product-price-wrap">
+              <p class="product-price-new">￥{{item.price}}</p>  
+              <p class="product-price-old">￥{{item.privilegePrice}}</p> 
+              <p class="discount">{{item.discount}}折</p>  
+            </view>
+            
+          </view>
+        </block> 
+      </view>
+  </scroll-view>  
+</view>   
+<!--福利专场 end-->
 
-</view>
-
-
-
-</view>
+<view class="weui-loadmore" hidden="{{hidden}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">努力加载中</view>
+</view>  

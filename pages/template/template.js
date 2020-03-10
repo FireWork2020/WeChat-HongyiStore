@@ -1,31 +1,22 @@
-// miniprogram/pages/cart/cart.js
-const app = getApp();
+// miniprogram/pages/template/template.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    carts:[
-      {
-        isSelect:false,
-        title:'欧莱雅',
-        price:49.9,
-        count:2,
-        imgUrl:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1194097673,290920682&fm=26&gp=0.jpg',
-
-      }
-    ],
-    cartNotEmp:true,
-    hidden:false,
-    isAllSelect:false,
-    totalMoney:0
+    item: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-09-15'
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
 
   /**
