@@ -25,7 +25,7 @@
   border-radius: 50%;
 }
 .userinfo-nickname {
-  color: #fff;
+  color: rgb(207, 22, 22);
 }
 /* 订单 */
 .order {
