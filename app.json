@@ -13,7 +13,9 @@
     "pages/my/my",
     "pages/goods/goodItem",
     "pages/classify/classify",
-    "pages/template/template"
+    "pages/template/template",
+    "pages/detail/detail",
+    "pages/classifyGoods/classifyGoods"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

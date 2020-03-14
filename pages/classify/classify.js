@@ -7,6 +7,8 @@ Page({
   data: {
     curNav:1,
     curIndex:0,
+    menus:[],
+    baseUrl:'http://localhost:8080/menu/menuImg?imgName=',
     classifyItems:[
       {
         id:1,
@@ -56,16 +58,29 @@ Page({
   switchRightTab: function (e){
     let id = e.target.dataset.id,
     index = parseInt(e.target.dataset.index);
+    console.log('id:'+id + 'index' + index);
     this.setData({
-      curNav:id,
+      curNav:index,
       curIndex:index
+    })
+  },
+  getMenus:function(e){
+    const that = this;
+    wx.request({
+      url: 'http://localhost:8080/menu/allmenus',
+      success(res) {
+        console.log(res);
+        that.setData({
+          menus: res.data
+        })
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getMenus();
   },
 
   /**
