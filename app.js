@@ -1,6 +1,9 @@
 //app.js
 App({
   isLogined:true,
+  globalData:{
+    userInfo:{}
+  },
   onLaunch: function () {
     
     if (!wx.cloud) {
@@ -15,6 +18,5 @@ App({
         traceUser: true,
       })
     }
-    this.globalData = {}
   }
 })

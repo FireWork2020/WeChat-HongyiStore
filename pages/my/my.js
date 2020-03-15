@@ -70,7 +70,37 @@ Page({
     }
   },
   getUserInfo: function (e) {
-    console.log(e)
+    console.log(e);
+    wx.getUserInfo({
+      success: function(res){
+        var userInfo = res.detail.userInfo;
+        wx.login({
+          success: function(loginRes){
+            var code = loginRes.code;
+            console.log(code);
+            wx.request({
+              url: 'http://localhost:8080/user/consumerVerify',
+              method:'POST',
+              data:{
+                nickName: userInfo.nickName,
+                code: code,
+                country: userInfo.country,
+                province: userInfo.province,
+                city: userInfo.city,
+                language: userInfo.language,
+                gender: userInfo.gender,
+                avatarUrl:userInfo.avatarUrl
+              },
+              success: function(res){
+                app.globalData.userInfo = res.data.data;
+              }
+            })
+          }
+        })
+      }
+    });
+    
+
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
