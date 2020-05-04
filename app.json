@@ -3,7 +3,6 @@
     "pages/homePage/homePage",
     "pages/index/index",
     "pages/userConsole/userConsole",
-    "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/openapi/openapi",
     "pages/openapi/callback/callback",
@@ -21,7 +20,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ee1350",
-    "navigationBarTitleText": "优艾商城",
+    "navigationBarTitleText": "弘益商城",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

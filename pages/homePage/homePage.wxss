@@ -13,7 +13,7 @@ page{
   flex: auto;  
   text-align: center;  
   line-height: 80rpx;  
-  font-size:14px;
+  font-size:10px;
 }  
 /* 顶部导航字体颜色 */
 .navbar .item.active{  

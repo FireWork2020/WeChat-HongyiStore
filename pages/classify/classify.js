@@ -7,20 +7,121 @@ Page({
   data: {
     curNav:1,
     curIndex:0,
-    menus:[],
+    //menus:[],
     baseUrl:'http://localhost:8080/menu/menuImg?imgName=',
-    classifyItems:[
+    menus:[
       {
         id:1,
-        name:'个人护理',
-        isHaveChild:false,
-        shopClassifyDtoList:[]
+        name:'洗护',
+        isHaveChild:true,
+        children:[
+          {
+            id: 6,
+            name: '护肤套装',
+            imgUrl: '../../images/classify/1-1.jpg'
+          },
+          {
+            id: 6,
+            name: '面霜',
+            imgUrl: '../../images/classify/1-2.jpg'
+          },
+          {
+            id: 6,
+            name: '爽肤水',
+            imgUrl: '../../images/classify/1-3.jpg'
+          },
+          {
+            id: 6,
+            name: '护手霜',
+            imgUrl: '../../images/classify/1-4.jpg'
+          },
+          {
+            id: 6,
+            name: '精华液',
+            imgUrl: '../../images/classify/1-5.jpg'
+          },
+          {
+            id: 6,
+            name: '面膜',
+            imgUrl: '../../images/classify/1-6.jpg'
+          },
+          {
+            id: 6,
+            name: '乳液',
+            imgUrl: '../../images/classify/1-7.jpg'
+          },
+          {
+            id: 6,
+            name: '卸妆洁面',
+            imgUrl: '../../images/classify/1-8.jpg'
+          },
+          {
+            id: 6,
+            name: '眼霜',
+            imgUrl: '../../images/classify/1-9.jpg'
+          },
+          {
+            id: 6,
+            name: '精油',
+            imgUrl: '../../images/classify/1-10.jpg'
+          },
+          {
+            id: 6,
+            name: '防晒',
+            imgUrl: '../../images/classify/1-11.jpg'
+          },
+          {
+            id: 6,
+            name: '洗发水',
+            imgUrl: '../../images/classify/1-12.jpg'
+          },
+          {
+            id: 6,
+            name: '护发素',
+            imgUrl: '../../images/classify/1-13.jpg'
+          },
+          {
+            id: 6,
+            name: '护发精华',
+            imgUrl: '../../images/classify/1-14.jpg'
+          },
+          {
+            id: 6,
+            name: '沐浴露',
+            imgUrl: '../../images/classify/1-15.jpg'
+          },
+          {
+            id: 6,
+            name: '身体乳',
+            imgUrl: '../../images/classify/1-16.jpg'
+          },
+          {
+            id: 6,
+            name: '男士护肤',
+            imgUrl: '../../images/classify/1-17.jpg'
+          },
+          {
+            id: 6,
+            name: '牙膏',
+            imgUrl: '../../images/classify/1-18.jpg'
+          },
+          {
+            id: 6,
+            name: '牙刷',
+            imgUrl: '../../images/classify/1-19.jpg'
+          },
+          {
+            id: 6,
+            name: '漱口水',
+            imgUrl: '../../images/classify/1-20.jpg'
+          }
+        ]
       },
       {
         id: 2,
-        name: '护肤彩妆',
+        name: '美妆',
         isHaveChild: true,
-        shopClassifyDtoList: [
+        children: [
           {
             id: 6,
             name: '口红',
@@ -40,16 +141,30 @@ Page({
       },
       {
         id: 3,
-        name: '母婴',
+        name: '养生保健',
         isHaveChild: false,
-        shopClassifyDtoList: [
+        children: [
         ]
       },
       {
         id: 4,
-        name: '护肤',
+        name: '配饰',
         isHaveChild: false,
-        shopClassifyDtoList: [
+        children: [
+        ]
+      },
+      {
+        id: 4,
+        name: '女装',
+        isHaveChild: false,
+        children: [
+        ]
+      },
+      {
+        id: 4,
+        name: '生活用品',
+        isHaveChild: false,
+        children: [
         ]
       }
     ]

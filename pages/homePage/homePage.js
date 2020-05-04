@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navbars:['推荐','护肤','家居','食品','电子数码'],
+    navbars:['洗护','美妆','黄漆家','弘益大学','瑜伽馆','弘益基金','旅行'],
     currentTab:0,
     indicatorDots:true,
     autoplay:true,
@@ -30,33 +30,44 @@ Page({
     menus:[
       {
         id:1,
-        menuName:'箱包',
-        imgUrl:'../../images/category/cat1.png'
+        menuName:'护肤套装',
+        imgUrl:'../../images/classify/1-1.jpg'
       },
       {
         id: 2,
-        menuName: '化妆品',
-        imgUrl: '../../images/category/cat2.png'
+        menuName: '面霜',
+        imgUrl: '../../images/classify/1-2.jpg'
       },
       {
         id: 3,
-        menuName: '内衣',
-        imgUrl: '../../images/category/cat3.png'
+        menuName: '护手霜',
+        imgUrl: '../../images/classify/1-4.jpg'
       },
       {
         id: 4,
-        menuName: '食品',
-        imgUrl: '../../images/category/cat4.png'
+        menuName: '爽肤水',
+        imgUrl: '../../images/classify/1-3.jpg'
       },
       {
         id: 5,
-        menuName: '自营',
-        imgUrl: '../../images/category/cat5.png'
+        menuName: '精华液',
+        imgUrl: '../../images/classify/1-5.jpg'
       },
       {
         id: 6,
-        menuName: '全球购',
-        imgUrl: '../../images/category/cat6.png'
+        menuName: '面膜',
+        imgUrl: '../../images/classify/1-6.jpg'
+      },
+      {
+        id: 7,
+        menuName: '乳液',
+        imgUrl: '../../images/classify/1-7.jpg'
+      }
+      ,
+      {
+        id: 8,
+        menuName: '卸妆',
+        imgUrl: '../../images/classify/1-8.jpg'
       }
     ],
     brands:[

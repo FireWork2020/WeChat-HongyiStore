@@ -1,4 +1,3 @@
-
 const ajax = require('../../utils/ajax.js');
 const utils = require('../../utils/util.js');
 var sectionData = [];
@@ -13,7 +12,8 @@ Page({
     loadingCount: 0,
     images: [],
     col1: [],
-    col2: []
+    col2: [],
+    baseUrl:'http://localhost:8080/classify/goodsByClassifyId'
   },
 
   onLoad: function (options) {
@@ -21,6 +21,21 @@ Page({
     page = 1;
     ifLoadMore = null;
     console.log('classifyId:' + classifyId);
+    wx.request({
+      url: this.baseUrl,
+      data:{
+        classifyId:this.classifyId
+      },
+      success:function(res){
+        for(var item in res.data){
+          if(col1.length > col2.length){
+            col2.push(item);
+          }else{
+            col1.push(item);
+          }
+        }
+      }
+    })
     wx.getSystemInfo({
       success: (res) => {
         let ww = res.windowWidth;

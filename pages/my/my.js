@@ -39,7 +39,7 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    if (app.globalData.userInfo.nickName) {
       console.log(1);
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -74,29 +74,30 @@ Page({
     wx.getUserInfo({
       success: function(res){
         var userInfo = res.detail.userInfo;
-        wx.login({
-          success: function(loginRes){
-            var code = loginRes.code;
-            console.log(code);
-            wx.request({
-              url: 'http://localhost:8080/user/consumerVerify',
-              method:'POST',
-              data:{
-                nickName: userInfo.nickName,
-                code: code,
-                country: userInfo.country,
-                province: userInfo.province,
-                city: userInfo.city,
-                language: userInfo.language,
-                gender: userInfo.gender,
-                avatarUrl:userInfo.avatarUrl
-              },
-              success: function(res){
-                app.globalData.userInfo = res.data.data;
-              }
-            })
-          }
-        })
+        this.userInfo = userInfo;
+        // wx.login({
+        //   success: function(loginRes){
+        //     var code = loginRes.code;
+        //     console.log(code);
+        //     wx.request({
+        //       url: 'http://localhost:8080/user/consumerVerify',
+        //       method:'POST',
+        //       data:{
+        //         nickName: userInfo.nickName,
+        //         code: code,
+        //         country: userInfo.country,
+        //         province: userInfo.province,
+        //         city: userInfo.city,
+        //         language: userInfo.language,
+        //         gender: userInfo.gender,
+        //         avatarUrl:userInfo.avatarUrl
+        //       },
+        //       success: function(requestRes){
+        //         app.globalData.userInfo = res.detail.userInfo;
+        //       }
+        //     })
+        //   }
+        // })
       }
     });
     
